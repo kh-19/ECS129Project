@@ -1,10 +1,11 @@
 # ECS129Project
 Project for ECS129, Winter 2022 @ UC Davis
 
+All files can be found in the files_folder folder - the folder can be downloaded so that all input and program files are in the same location.
+
 dna.txt is the .txt file that contains the DNA sequence being tested for this project: 
 
 5’ TCAATGTAACGCGCTACCCGGAGCTCTGGGCCCAAATTTCATCCACT 3’
-
 
 genes.py is the python program written for the project.
 
