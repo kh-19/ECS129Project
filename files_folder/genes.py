@@ -8,7 +8,7 @@ for i in dna_file:
 
 
 
-
+#find complmentary strand
 def compl_strand(dna_seq):
 	#slice off 5' end
 	dna_seq = dna_seq[3:]
@@ -29,11 +29,12 @@ def compl_strand(dna_seq):
 	
 	return compl_dna_seq
 
+#transcribe mRNA given DNA sequence
 def dna2rna(dna_seq):
 	mRNA_seq = ''
 	for nucleotide in dna_seq:
 		if nucleotide == 'A':
-			mRNA_seq = mRNA_seq + "T"
+			mRNA_seq = mRNA_seq + "U"
 		elif nucleotide == 'T':
 			mRNA_seq = mRNA_seq + "A"
 		elif nucleotide == 'C':
@@ -43,6 +44,7 @@ def dna2rna(dna_seq):
 	return mRNA_seq
 
 print(compl_strand(dna))
+print(dna2rna(dna))
 
 #close file
 dna_file.close()
