@@ -17,13 +17,18 @@ def main():
                 
                 #check DNA strand for miscellaneous characters
                 #define what characters are not allowed (only A, T, G, C allowed)
-                bad_chars_list = ['B','D','E','F','H','I','J','K','L','M','O','P','Q','R','S','U','V','W','X','Y','Z']
+                bad_chars_list = ['B','D','E','F','H','I','J','K','L','M','O','P','Q','R','S','U','V','W','X','Y','Z', '\s']
                 for i in bad_chars_list:
                     bad_chars = re.compile(i)
                     if(bad_chars.search(dna_strand) == None):
                         continue
                     else:
                         print("Warning: erroneous input detected! Please check DNA sequence and try again.")
+                        
+                        if i == '\s':
+                            print("Unauthorized Space detected in Sequence")
+                            return
+                            
                         print("Problematic Character Detected:", i)
                         return
                 print("No erroneous DNA input!")
