@@ -56,7 +56,6 @@ def main():
                 print("Reversed Complementary DNA Strand: ", reversed_compl_dna_strand)
 
                 #you need to process dna_strand and reversed_compl_dna_strand!
-
                 gene = process_all_seq(dna_strand, reversed_compl_dna_strand)
                 
                 #neither sequence has start + stop codon present
@@ -100,7 +99,8 @@ def compl_strand(dna_seq):
                         compl_dna_seq = compl_dna_seq + "C"
         return compl_dna_seq
 
-
+#generating ORF's from complementary strand (through calling below functions); afterwards, comparing ORF's found 
+# on complementary strand with original strand to find longest ORF 
 def process_all_seq(dna_seq, compl_dna_seq):
 
         #trying to find valid open reading frame from DNA sequence 
@@ -111,9 +111,8 @@ def process_all_seq(dna_seq, compl_dna_seq):
 
 
         #trying to find valid open reading frame from complimentary DNA sequence
-
-        # PK: even if you found a gene on the input strand, the complementary strand could still contain
-        #     a gene that is longer!
+        #even if you found a gene on the input strand, the complementary strand could still contain
+        #a gene that is longer!
 
         gene1 = process_seq(compl_dna_seq)
         if len(gene1) > len(gene):
@@ -121,7 +120,8 @@ def process_all_seq(dna_seq, compl_dna_seq):
 
         return gene
 
-
+#calling find_ORF to generate 3 ORFs for original DNA strand (by shifting the index for each call); using longest gene found from each ORF 
+#and comparing their length to one another 
 def process_seq(dna_seq):
         num_of_triplets = int(len(dna_seq) / 3)
 
@@ -137,6 +137,7 @@ def process_seq(dna_seq):
           gene = gene1
         return gene
 
+#generates open reading frame given dna sequence 
 def find_ORF(dna_seq):
 
         s = ""
