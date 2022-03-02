@@ -1,5 +1,3 @@
-ORF_str = "ACTGGGGGGGGG"
-
 def modify_ORF(ORF_str):
 	#check if ORF_str is an empty string
 	if len(ORF_str) == 0:
@@ -146,8 +144,3 @@ def del_nuc(ORF, indx):
 		return ORF
 	except:
 		print("Error! Do you have an empty string?")
-
-def main():
-	modify_ORF(ORF_str)
-
-main()
