@@ -1,6 +1,6 @@
 import re
 #importing modify_gene function to allow users to create mutations given longest ORF 
-from genemodifyV4 import modify_ORF
+from genemodifyV4 import *
 
 def main():
         #import file
